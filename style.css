@@ -43,10 +43,33 @@ header {
     display: flex; justify-content: space-between; align-items: center; z-index: 10;
 }
 .logo { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 1.5rem; letter-spacing: -1px; }
+
+/* --- USUŃ LUB ZAKOMENTUJ STARY KOD --- */
+/*
 .logo-icon {
     width: 24px; height: 24px; background: var(--lime-primary);
     border-radius: 0 24px 24px 24px; box-shadow: 0 0 15px var(--lime-glow);
 }
+*/
+
+/* --- DODAJ NOWY KOD DLA SVG --- */
+.logo-svg {
+    width: 28px;  /* Nieco większa niż poprzednia */
+    height: 28px;
+    stroke: var(--lime-primary); /* Kolor linii pobrany ze zmiennej */
+    /* Używamy drop-shadow zamiast box-shadow, aby świeciły linie, a nie kwadrat wokół */
+    filter: drop-shadow(0 0 6px var(--lime-glow));
+    transition: all 0.5s ease;
+}
+
+/* Opcjonalny efekt po najechaniu na logo */
+.logo:hover .logo-svg {
+    transform: rotate(45deg); /* Obrót o 45 stopni */
+    filter: drop-shadow(0 0 10px var(--lime-glow)); /* Mocniejszy blask */
+    stroke: var(--lime-darker);
+}
+
+
 .fullscreen-btn {
     background: none; border: 1px solid var(--text-gray); color: var(--text-gray);
     padding: 8px 16px; border-radius: 20px; cursor: pointer; transition: all 0.3s ease; font-family: inherit;
